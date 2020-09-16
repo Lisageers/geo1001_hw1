@@ -247,6 +247,61 @@ def kernel_dens(a, b, c, d, e):
     plt.show()
 
 
+def corr(a, b, c, d, e, variable):
+    fig = plt.figure()
+    ax1 = fig.add_subplot(111)
+    ax1.set_title(f'Correlation sensors {variable}')
+    ax1.set_xlabel('Pearson correlation coefficient')
+    ax1.set_ylabel('Spearman correlation coefficient')
+
+    sp = ss.spearmanr(a, b)[0]
+    pe = ss.pearsonr(a, b)[0]
+    ax1.scatter(pe, sp)
+    plt.annotate('AB', [pe, sp])
+
+    sp = ss.spearmanr(a, c)[0]
+    pe = ss.pearsonr(a, c)[0]
+    ax1.scatter(pe, sp)
+    plt.annotate('AC', [pe, sp])
+
+    sp = ss.spearmanr(a, d)[0]
+    pe = ss.pearsonr(a, d)[0]
+    ax1.scatter(pe, sp)
+    plt.annotate('AD', [pe, sp])
+
+    sp = ss.spearmanr(b, c)[0]
+    pe = ss.pearsonr(b, c)[0]
+    ax1.scatter(pe, sp)
+    plt.annotate('BC', [pe, sp])
+
+    sp = ss.spearmanr(b, d)[0]
+    pe = ss.pearsonr(b, d)[0]
+    ax1.scatter(pe, sp)
+    plt.annotate('BD', [pe, sp])
+
+    sp = ss.spearmanr(b, e)[0]
+    pe = ss.pearsonr(b, e)[0]
+    ax1.scatter(pe, sp)
+    plt.annotate('BE', [pe, sp])
+
+    sp = ss.spearmanr(c, d)[0]
+    pe = ss.pearsonr(c, d)[0]
+    ax1.scatter(pe, sp)
+    plt.annotate('CD', [pe, sp])
+
+    sp = ss.spearmanr(c, e)[0]
+    pe = ss.pearsonr(c, e)[0]
+    ax1.scatter(pe, sp)
+    plt.annotate('CE', [pe, sp])
+
+    sp = ss.spearmanr(e, d)[0]
+    pe = ss.pearsonr(e, d)[0]
+    ax1.scatter(pe, sp)
+    plt.annotate('DE', [pe, sp])
+    
+    plt.show()
+
+
 if __name__ == '__main__':
     data_a = read_csv('data_hw01/HEAT-A_final.csv')
     data_b = read_csv('data_hw01/HEAT-B_final.csv')
@@ -280,9 +335,21 @@ if __name__ == '__main__':
     # pdf(data_a['Wind Speed'], data_b['Wind Speed'], data_c['Wind Speed'],
     #     data_d['Wind Speed'], data_e['Wind Speed'])
 
-    kernel_dens(data_a['Wind Speed'], data_b['Wind Speed'], data_c['Wind Speed'],
-        data_d['Wind Speed'], data_e['Wind Speed'])
-    
+    # kernel_dens(data_a['Wind Speed'], data_b['Wind Speed'], data_c['Wind Speed'],
+    #     data_d['Wind Speed'], data_e['Wind Speed'])
 
+    # a3
+
+    corr(data_a['Temperature'][0:2474], data_b['Temperature'][0:2474], data_c['Temperature'][0:2474],
+        data_d['Temperature'][0:2474], data_e['Temperature'][0:2474], 'Temperature')
+
+    corr(data_a['WBGT'][0:2474], data_b['WBGT'][0:2474], data_c['WBGT'][0:2474],
+        data_d['WBGT'][0:2474], data_e['WBGT'][0:2474], 'Wet Bulb Globe Temperature')
+
+    corr(data_a['Crosswind Speed'][0:2474], data_b['Crosswind Speed'][0:2474], data_c['Crosswind Speed'][0:2474],
+        data_d['Crosswind Speed'][0:2474], data_e['Crosswind Speed'][0:2474], 'Crosswind Speed')
+
+    
+# plt.axis([0, 5, 0, 5])
 
 
