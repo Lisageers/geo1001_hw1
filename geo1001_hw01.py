@@ -7,6 +7,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import seaborn as sns
 import scipy.stats as ss
+from tabulate import tabulate
 
 
 
@@ -302,6 +303,28 @@ def corr(a, b, c, d, e, variable):
     plt.show()
 
 
+def confidence_interval(a, b, c, d, e, variable):
+    dict = {}
+    ci = ss.t.interval(alpha=0.95, df=len(a)-1, loc=np.mean(a), scale=ss.sem(a)) 
+    dict[f"{variable}"] = [f"CI A: {ci}"]
+
+    ci = ss.t.interval(alpha=0.95, df=len(b)-1, loc=np.mean(b), scale=ss.sem(b)) 
+    dict[f"{variable}"].append(f"CI B: {ci}")
+
+    ci = ss.t.interval(alpha=0.95, df=len(c)-1, loc=np.mean(c), scale=ss.sem(c)) 
+    dict[f"{variable}"].append(f"CI C: {ci}")
+
+    ci = ss.t.interval(alpha=0.95, df=len(d)-1, loc=np.mean(d), scale=ss.sem(d)) 
+    dict[f"{variable}"].append(f"CI D: {ci}")
+
+    ci = ss.t.interval(alpha=0.95, df=len(e)-1, loc=np.mean(e), scale=ss.sem(e)) 
+    dict[f"{variable}"].append(f"CI E: {ci}")
+
+    f = open("confidence_intervals.txt", "a")
+    f.write(tabulate(dict, headers="keys"))
+    f.write('\n\n')
+    f.close()
+
 if __name__ == '__main__':
     data_a = read_csv('data_hw01/HEAT-A_final.csv')
     data_b = read_csv('data_hw01/HEAT-B_final.csv')
@@ -310,33 +333,32 @@ if __name__ == '__main__':
     data_e = read_csv('data_hw01/HEAT-E_final.csv')
 
     # a1
-    # mean_statistics(data_a)
-    # mean_statistics(data_b)
-    # mean_statistics(data_c)
-    # mean_statistics(data_d)
-    # mean_statistics(data_e)
+    mean_statistics(data_a)
+    mean_statistics(data_b)
+    mean_statistics(data_c)
+    mean_statistics(data_d)
+    mean_statistics(data_e)
 
-    # histogram(data_a, data_b, data_c, data_d, data_e)
+    histogram(data_a, data_b, data_c, data_d, data_e)
 
-    # frequency_polygons(data_a, data_b, data_c, data_d, data_e)
+    frequency_polygons(data_a, data_b, data_c, data_d, data_e)
 
-    # boxplots(data_a, data_b, data_c, data_d, data_e)
+    boxplots(data_a, data_b, data_c, data_d, data_e)
 
     # a2
+    pmf(data_a, data_b, data_c, data_d, data_e)
 
-    # pmf(data_a, data_b, data_c, data_d, data_e)
+    pdf(data_a['Temperature'], data_b['Temperature'], data_c['Temperature'],
+        data_d['Temperature'], data_e['Temperature'])
 
-    # pdf(data_a['Temperature'], data_b['Temperature'], data_c['Temperature'],
-    #     data_d['Temperature'], data_e['Temperature'])
+    cdf(data_a['Temperature'], data_b['Temperature'], data_c['Temperature'],
+        data_d['Temperature'], data_e['Temperature'])
 
-    # cdf(data_a['Temperature'], data_b['Temperature'], data_c['Temperature'],
-    #     data_d['Temperature'], data_e['Temperature'])
+    pdf(data_a['Wind Speed'], data_b['Wind Speed'], data_c['Wind Speed'],
+        data_d['Wind Speed'], data_e['Wind Speed'])
 
-    # pdf(data_a['Wind Speed'], data_b['Wind Speed'], data_c['Wind Speed'],
-    #     data_d['Wind Speed'], data_e['Wind Speed'])
-
-    # kernel_dens(data_a['Wind Speed'], data_b['Wind Speed'], data_c['Wind Speed'],
-    #     data_d['Wind Speed'], data_e['Wind Speed'])
+    kernel_dens(data_a['Wind Speed'], data_b['Wind Speed'], data_c['Wind Speed'],
+        data_d['Wind Speed'], data_e['Wind Speed'])
 
     # a3
 
@@ -349,7 +371,16 @@ if __name__ == '__main__':
     corr(data_a['Crosswind Speed'][0:2474], data_b['Crosswind Speed'][0:2474], data_c['Crosswind Speed'][0:2474],
         data_d['Crosswind Speed'][0:2474], data_e['Crosswind Speed'][0:2474], 'Crosswind Speed')
 
-    
-# plt.axis([0, 5, 0, 5])
+    # a4
+    cdf(data_a['Temperature'], data_b['Temperature'], data_c['Temperature'],
+        data_d['Temperature'], data_e['Temperature'])
 
+    cdf(data_a['Wind Speed'], data_b['Wind Speed'], data_c['Wind Speed'],
+        data_d['Wind Speed'], data_e['Wind Speed'])
+
+    confidence_interval(data_a['Temperature'], data_b['Temperature'], data_c['Temperature'],
+        data_d['Temperature'], data_e['Temperature'], "Temperature")
+    
+    confidence_interval(data_a['Wind Speed'], data_b['Wind Speed'], data_c['Wind Speed'],
+        data_d['Wind Speed'], data_e['Wind Speed'], "Wind Speed")
 
