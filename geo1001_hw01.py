@@ -325,6 +325,21 @@ def confidence_interval(a, b, c, d, e, variable):
     f.write('\n\n')
     f.close()
 
+
+def hypothesis_test(a, b, c, d, e, variable):
+
+    t, p = ss.ttest_ind(e, d)
+    print(f"p-value E, D of {variable}:  {p}")
+
+    t, p = ss.ttest_ind(d, c)
+    print(f"p-value C, D of {variable}:  {p}")
+
+    t, p = ss.ttest_ind(b, c)
+    print(f"p-value B, C of {variable}:  {p}")
+
+    t, p = ss.ttest_ind(b, a)
+    print(f"p-value A, B of {variable}:  {p}")
+
 if __name__ == '__main__':
     data_a = read_csv('data_hw01/HEAT-A_final.csv')
     data_b = read_csv('data_hw01/HEAT-B_final.csv')
@@ -332,55 +347,61 @@ if __name__ == '__main__':
     data_d = read_csv('data_hw01/HEAT-D_final.csv')
     data_e = read_csv('data_hw01/HEAT-E_final.csv')
 
-    # a1
-    mean_statistics(data_a)
-    mean_statistics(data_b)
-    mean_statistics(data_c)
-    mean_statistics(data_d)
-    mean_statistics(data_e)
+    # # a1
+    # mean_statistics(data_a)
+    # mean_statistics(data_b)
+    # mean_statistics(data_c)
+    # mean_statistics(data_d)
+    # mean_statistics(data_e)
 
-    histogram(data_a, data_b, data_c, data_d, data_e)
+    # histogram(data_a, data_b, data_c, data_d, data_e)
 
-    frequency_polygons(data_a, data_b, data_c, data_d, data_e)
+    # frequency_polygons(data_a, data_b, data_c, data_d, data_e)
 
-    boxplots(data_a, data_b, data_c, data_d, data_e)
+    # boxplots(data_a, data_b, data_c, data_d, data_e)
 
-    # a2
-    pmf(data_a, data_b, data_c, data_d, data_e)
+    # # a2
+    # pmf(data_a, data_b, data_c, data_d, data_e)
 
-    pdf(data_a['Temperature'], data_b['Temperature'], data_c['Temperature'],
-        data_d['Temperature'], data_e['Temperature'])
+    # pdf(data_a['Temperature'], data_b['Temperature'], data_c['Temperature'],
+    #     data_d['Temperature'], data_e['Temperature'])
 
-    cdf(data_a['Temperature'], data_b['Temperature'], data_c['Temperature'],
-        data_d['Temperature'], data_e['Temperature'])
+    # cdf(data_a['Temperature'], data_b['Temperature'], data_c['Temperature'],
+    #     data_d['Temperature'], data_e['Temperature'])
 
-    pdf(data_a['Wind Speed'], data_b['Wind Speed'], data_c['Wind Speed'],
-        data_d['Wind Speed'], data_e['Wind Speed'])
+    # pdf(data_a['Wind Speed'], data_b['Wind Speed'], data_c['Wind Speed'],
+    #     data_d['Wind Speed'], data_e['Wind Speed'])
 
-    kernel_dens(data_a['Wind Speed'], data_b['Wind Speed'], data_c['Wind Speed'],
-        data_d['Wind Speed'], data_e['Wind Speed'])
+    # kernel_dens(data_a['Wind Speed'], data_b['Wind Speed'], data_c['Wind Speed'],
+    #     data_d['Wind Speed'], data_e['Wind Speed'])
 
-    # a3
+    # # a3
 
-    corr(data_a['Temperature'][0:2474], data_b['Temperature'][0:2474], data_c['Temperature'][0:2474],
-        data_d['Temperature'][0:2474], data_e['Temperature'][0:2474], 'Temperature')
+    # corr(data_a['Temperature'][0:2474], data_b['Temperature'][0:2474], data_c['Temperature'][0:2474],
+    #     data_d['Temperature'][0:2474], data_e['Temperature'][0:2474], 'Temperature')
 
-    corr(data_a['WBGT'][0:2474], data_b['WBGT'][0:2474], data_c['WBGT'][0:2474],
-        data_d['WBGT'][0:2474], data_e['WBGT'][0:2474], 'Wet Bulb Globe Temperature')
+    # corr(data_a['WBGT'][0:2474], data_b['WBGT'][0:2474], data_c['WBGT'][0:2474],
+    #     data_d['WBGT'][0:2474], data_e['WBGT'][0:2474], 'Wet Bulb Globe Temperature')
 
-    corr(data_a['Crosswind Speed'][0:2474], data_b['Crosswind Speed'][0:2474], data_c['Crosswind Speed'][0:2474],
-        data_d['Crosswind Speed'][0:2474], data_e['Crosswind Speed'][0:2474], 'Crosswind Speed')
+    # corr(data_a['Crosswind Speed'][0:2474], data_b['Crosswind Speed'][0:2474], data_c['Crosswind Speed'][0:2474],
+    #     data_d['Crosswind Speed'][0:2474], data_e['Crosswind Speed'][0:2474], 'Crosswind Speed')
 
-    # a4
-    cdf(data_a['Temperature'], data_b['Temperature'], data_c['Temperature'],
-        data_d['Temperature'], data_e['Temperature'])
+    # # a4
+    # cdf(data_a['Temperature'], data_b['Temperature'], data_c['Temperature'],
+    #     data_d['Temperature'], data_e['Temperature'])
 
-    cdf(data_a['Wind Speed'], data_b['Wind Speed'], data_c['Wind Speed'],
-        data_d['Wind Speed'], data_e['Wind Speed'])
+    # cdf(data_a['Wind Speed'], data_b['Wind Speed'], data_c['Wind Speed'],
+    #     data_d['Wind Speed'], data_e['Wind Speed'])
 
-    confidence_interval(data_a['Temperature'], data_b['Temperature'], data_c['Temperature'],
-        data_d['Temperature'], data_e['Temperature'], "Temperature")
+    # confidence_interval(data_a['Temperature'], data_b['Temperature'], data_c['Temperature'],
+    #     data_d['Temperature'], data_e['Temperature'], "Temperature")
     
-    confidence_interval(data_a['Wind Speed'], data_b['Wind Speed'], data_c['Wind Speed'],
-        data_d['Wind Speed'], data_e['Wind Speed'], "Wind Speed")
+    # confidence_interval(data_a['Wind Speed'], data_b['Wind Speed'], data_c['Wind Speed'],
+    #     data_d['Wind Speed'], data_e['Wind Speed'], "Wind Speed")
+
+    hypothesis_test(data_a['Temperature'][0:2474], data_b['Temperature'][0:2474], data_c['Temperature'][0:2474],
+         data_d['Temperature'][0:2474], data_e['Temperature'][0:2474], 'Temperature')
+
+    hypothesis_test(data_a['Wind Speed'][0:2474], data_b['Wind Speed'][0:2474], data_c['Wind Speed'][0:2474],
+         data_d['Wind Speed'][0:2474], data_e['Wind Speed'][0:2474], 'Wind Speed')
 
