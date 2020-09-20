@@ -16,41 +16,97 @@ def read_csv(datafile):
     # print(data)
     return data
 
-def mean_statistics(dataframe):
+def mean_statistics_csv(a, b, c, d, e):
+    data_dict = {}
+
+    mean = a.mean()
+    data_dict['Mean A'] = mean
+    mean = b.mean()
+    data_dict['Mean B'] = mean
+    mean = c.mean()
+    data_dict['Mean C'] = mean
+    mean = d.mean()
+    data_dict['Mean D'] = mean
+    mean = e.mean()
+    data_dict['Mean E'] = mean
+
+    std = a.std()
+    data_dict['Standard Devation A'] = std
+    std = b.std()
+    data_dict['Standard Devation B'] = std
+    std = c.std()
+    data_dict['Standard Devation C'] = std
+    std = d.std()
+    data_dict['Standard Devation D'] = std
+    std = e.std()
+    data_dict['Standard Devation E'] = std
+
+    variance = a.var()
+    data_dict['Variance A'] = variance
+    variance = b.var()
+    data_dict['Variance B'] = variance
+    variance = c.var()
+    data_dict['Variance C'] = variance
+    variance = d.var()
+    data_dict['Variance D'] = variance
+    variance = e.var()
+    data_dict['Variance E'] = variance
+
+    dataframe = pandas.DataFrame(data_dict)
+    dataframe.to_csv('mean_statistics.csv')
+
+def mean_statistics(dataframe, sensor):
 
     mean = dataframe.mean()
     std = dataframe.std()
     variance = dataframe.var()
-    return print(f"mean: \n{mean}, \n variance: \n{variance}, \n standard deviation \n{std}\n")
+    print(f"Mean of sensor {sensor}: \n{mean} \n\nVariance of sensor {sensor}: \n{variance}, \n\nStandard deviation of sensor {sensor} \n{std}\n")
 
-def histogram(dataframea, dataframeb, dataframec, dataframed, dataframee):
+def histogram(dataframea, dataframeb, dataframec, dataframed, dataframee, bins, xlim, ylim):
+    fig = plt.figure()
     
-    plt.axis([0, 40, 0, 1500])
-    plt.subplot(2, 3, 1)
-    dataframea['Temperature'].hist(bins=5)
-    plt.subplot(2, 3, 2)
-    dataframeb['Temperature'].hist(bins=5)
-    plt.subplot(2, 3, 3)
-    dataframec['Temperature'].hist(bins=5)
-    plt.subplot(2, 3, 4)
-    dataframed['Temperature'].hist(bins=5)
-    plt.subplot(2, 3, 5)
-    dataframee['Temperature'].hist(bins=5)
+    fig.suptitle(f"Histograms of all sensors {bins} bins")
+    ax1 = fig.add_subplot(231)
+    ax1.set_ylabel('Frequency')
+    ax1.set_xlabel('Temperature in C')
+    ax1.set_title('Sensor A')
+    ax1.set_xlim(xlim)
+    ax1.set_ylim(ylim)
+    dataframea['Temperature'].hist(bins=bins)
     
-    plt.show()
-
-    plt.axis([0, 40, 0, 1500])
-    plt.subplot(2, 3, 1)
-    dataframea['Temperature'].hist(bins=50)
-    plt.subplot(2, 3, 2)
-    dataframeb['Temperature'].hist(bins=50)
-    plt.subplot(2, 3, 3)
-    dataframec['Temperature'].hist(bins=50)
-    plt.subplot(2, 3, 4)
-    dataframed['Temperature'].hist(bins=50)
-    plt.subplot(2, 3, 5)
-    dataframee['Temperature'].hist(bins=50)
+    ax2 = fig.add_subplot(232)
+    ax2.set_ylabel('Frequency')
+    ax2.set_xlabel('Temperature in C')
+    ax2.set_title('Sensor B')
+    ax2.set_xlim(xlim)
+    ax2.set_ylim(ylim)
+    dataframeb['Temperature'].hist(bins=bins)
     
+    ax3 = fig.add_subplot(233)
+    ax3.set_ylabel('Frequency')
+    ax3.set_xlabel('Temperature in C')
+    ax3.set_title('Sensor C')
+    ax3.set_xlim(xlim)
+    ax3.set_ylim(ylim)
+    dataframec['Temperature'].hist(bins=bins)
+    
+    ax4 = fig.add_subplot(234)
+    ax4.set_ylabel('Frequency')
+    ax4.set_xlabel('Temperature in C')
+    ax4.set_title('Sensor D')
+    ax4.set_xlim(xlim)
+    ax4.set_ylim(ylim)
+    dataframed['Temperature'].hist(bins=bins)
+    
+    ax5 = fig.add_subplot(235)
+    ax5.set_ylabel('Frequency')
+    ax5.set_xlabel('Temperature in C')
+    ax5.set_title('Sensor E')
+    ax5.set_xlim(xlim)
+    ax5.set_ylim(ylim)
+    dataframee['Temperature'].hist(bins=bins)
+    
+    fig.tight_layout()
     plt.show()
 
 
@@ -347,14 +403,17 @@ if __name__ == '__main__':
     data_d = read_csv('data_hw01/HEAT-D_final.csv')
     data_e = read_csv('data_hw01/HEAT-E_final.csv')
 
-    # # a1
-    # mean_statistics(data_a)
-    # mean_statistics(data_b)
-    # mean_statistics(data_c)
-    # mean_statistics(data_d)
-    # mean_statistics(data_e)
+    # # # a1
+    # mean_statistics(data_a, "A")
+    # mean_statistics(data_b, "B")
+    # mean_statistics(data_c, "C")
+    # mean_statistics(data_d, "D")
+    # mean_statistics(data_e, "E")
 
-    # histogram(data_a, data_b, data_c, data_d, data_e)
+    # mean_statistics_csv(data_a, data_b, data_c, data_d, data_e)
+
+    histogram(data_a, data_b, data_c, data_d, data_e, 5, [0, 40], [0, 1400])
+    histogram(data_a, data_b, data_c, data_d, data_e, 50, [0, 40], [0, 250])
 
     # frequency_polygons(data_a, data_b, data_c, data_d, data_e)
 
@@ -399,9 +458,9 @@ if __name__ == '__main__':
     # confidence_interval(data_a['Wind Speed'], data_b['Wind Speed'], data_c['Wind Speed'],
     #     data_d['Wind Speed'], data_e['Wind Speed'], "Wind Speed")
 
-    hypothesis_test(data_a['Temperature'][0:2474], data_b['Temperature'][0:2474], data_c['Temperature'][0:2474],
-         data_d['Temperature'][0:2474], data_e['Temperature'][0:2474], 'Temperature')
+    # hypothesis_test(data_a['Temperature'][0:2474], data_b['Temperature'][0:2474], data_c['Temperature'][0:2474],
+    #      data_d['Temperature'][0:2474], data_e['Temperature'][0:2474], 'Temperature')
 
-    hypothesis_test(data_a['Wind Speed'][0:2474], data_b['Wind Speed'][0:2474], data_c['Wind Speed'][0:2474],
-         data_d['Wind Speed'][0:2474], data_e['Wind Speed'][0:2474], 'Wind Speed')
+    # hypothesis_test(data_a['Wind Speed'][0:2474], data_b['Wind Speed'][0:2474], data_c['Wind Speed'][0:2474],
+    #      data_d['Wind Speed'][0:2474], data_e['Wind Speed'][0:2474], 'Wind Speed')
 
