@@ -103,12 +103,12 @@ INPUT /Users/Vince/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/p
 INPUT /Users/Vince/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/cm/cmbx12.tfm
 INPUT /Users/Vince/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/cm/cmtt10.tfm
 INPUT /Users/Vince/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/cm/cmbx12.tfm
-INPUT /Users/Vince/Documents/Geo1001/geo1001_hw1/images_latex/histogram_5_bins.png
-INPUT /Users/Vince/Documents/Geo1001/geo1001_hw1/images_latex/histogram_5_bins.png
-INPUT /Users/Vince/Documents/Geo1001/geo1001_hw1/images_latex/histogram_5_bins.png
-INPUT /Users/Vince/Documents/Geo1001/geo1001_hw1/images_latex/histogram_5_bins.png
-INPUT /Users/Vince/Documents/Geo1001/geo1001_hw1/images_latex/histogram_5_bins.png
 INPUT /Users/Vince/Library/Application Support/MiKTeX/texmfs/data/pdftex/config/pdftex.map
+INPUT /Users/Vince/Documents/Geo1001/geo1001_hw1/images_latex/histogram_5_bins.png
+INPUT /Users/Vince/Documents/Geo1001/geo1001_hw1/images_latex/histogram_5_bins.png
+INPUT /Users/Vince/Documents/Geo1001/geo1001_hw1/images_latex/histogram_5_bins.png
+INPUT /Users/Vince/Documents/Geo1001/geo1001_hw1/images_latex/histogram_5_bins.png
+INPUT /Users/Vince/Documents/Geo1001/geo1001_hw1/images_latex/histogram_5_bins.png
 INPUT /Users/Vince/Documents/Geo1001/geo1001_hw1/images_latex/histogram_50_bins.png
 INPUT /Users/Vince/Documents/Geo1001/geo1001_hw1/images_latex/histogram_50_bins.png
 INPUT /Users/Vince/Documents/Geo1001/geo1001_hw1/images_latex/histogram_50_bins.png
@@ -174,6 +174,16 @@ INPUT /Users/Vince/Documents/Geo1001/geo1001_hw1/images_latex/cor_cwindspeed.png
 INPUT /Users/Vince/Documents/Geo1001/geo1001_hw1/images_latex/cor_cwindspeed.png
 INPUT /Users/Vince/Documents/Geo1001/geo1001_hw1/images_latex/cor_cwindspeed.png
 INPUT /Users/Vince/Documents/Geo1001/geo1001_hw1/images_latex/cor_cwindspeed.png
+INPUT /Users/Vince/Documents/Geo1001/geo1001_hw1/images_latex/sensor_locations.png
+INPUT /Users/Vince/Documents/Geo1001/geo1001_hw1/images_latex/sensor_locations.png
+INPUT /Users/Vince/Documents/Geo1001/geo1001_hw1/images_latex/sensor_locations.png
+INPUT /Users/Vince/Documents/Geo1001/geo1001_hw1/images_latex/sensor_locations.png
+INPUT /Users/Vince/Documents/Geo1001/geo1001_hw1/images_latex/sensor_locations.png
+INPUT /Users/Vince/Documents/Geo1001/geo1001_hw1/images_latex/hypo_locations.png
+INPUT /Users/Vince/Documents/Geo1001/geo1001_hw1/images_latex/hypo_locations.png
+INPUT /Users/Vince/Documents/Geo1001/geo1001_hw1/images_latex/hypo_locations.png
+INPUT /Users/Vince/Documents/Geo1001/geo1001_hw1/images_latex/hypo_locations.png
+INPUT /Users/Vince/Documents/Geo1001/geo1001_hw1/images_latex/hypo_locations.png
 INPUT /Users/Vince/Documents/Geo1001/geo1001_hw1/images_latex/cdf_temp.png
 INPUT /Users/Vince/Documents/Geo1001/geo1001_hw1/images_latex/cdf_temp.png
 INPUT /Users/Vince/Documents/Geo1001/geo1001_hw1/images_latex/cdf_windspeed.png
