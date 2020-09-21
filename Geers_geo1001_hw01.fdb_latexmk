@@ -1,14 +1,14 @@
 # Fdb version 3
-["bibtex Geers_geo1001_hw01"] 1600695076 "Geers_geo1001_hw01.aux" "Geers_geo1001_hw01.bbl" "Geers_geo1001_hw01" 1600695083
+["bibtex Geers_geo1001_hw01"] 1600695703 "Geers_geo1001_hw01.aux" "Geers_geo1001_hw01.bbl" "Geers_geo1001_hw01" 1600695709
   "/Users/Vince/Library/Application Support/MiKTeX/texmfs/install/bibtex/bst/bibtex/plain.bst" 1600694260 20613 bd3fbfa9f64872b81ac57a0dd2ed855f ""
-  "Geers_geo1001_hw01.aux" 1600695082 5734 8a638a51a7fc7b5a8e617bd98d550f85 "pdflatex"
+  "Geers_geo1001_hw01.aux" 1600695709 5734 8a638a51a7fc7b5a8e617bd98d550f85 "pdflatex"
   "references.bib" 1600693924 264 9d7a8e19a8dc8315a31a426dfa874680 ""
   (generated)
-  "Geers_geo1001_hw01.blg"
   "Geers_geo1001_hw01.bbl"
-["pdflatex"] 1600695076 "/Users/Vince/Documents/Geo1001/geo1001_hw1/Geers_geo1001_hw01.tex" "/Users/Vince/Documents/Geo1001/geo1001_hw1/Geers_geo1001_hw01.pdf" "Geers_geo1001_hw01" 1600695083
-  "/Users/Vince/Documents/Geo1001/geo1001_hw1/Geers_geo1001_hw01.aux" 1600695082 5734 8a638a51a7fc7b5a8e617bd98d550f85 ""
-  "/Users/Vince/Documents/Geo1001/geo1001_hw1/Geers_geo1001_hw01.tex" 1600694982 14602 089604abfa8d636f18c42a0fe1d22640 ""
+  "Geers_geo1001_hw01.blg"
+["pdflatex"] 1600695703 "/Users/Vince/Documents/Geo1001/geo1001_hw1/Geers_geo1001_hw01.tex" "/Users/Vince/Documents/Geo1001/geo1001_hw1/Geers_geo1001_hw01.pdf" "Geers_geo1001_hw01" 1600695709
+  "/Users/Vince/Documents/Geo1001/geo1001_hw1/Geers_geo1001_hw01.aux" 1600695709 5734 8a638a51a7fc7b5a8e617bd98d550f85 ""
+  "/Users/Vince/Documents/Geo1001/geo1001_hw1/Geers_geo1001_hw01.tex" 1600695701 14609 03fc91aff773fd48085e7c9a4ef00f6b ""
   "/Users/Vince/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/public/cm/dpi600/cmbx12.pk" 1599817466 14176 4c3b4635a244d14476054065538c36ad ""
   "/Users/Vince/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/public/cm/dpi600/cmmi10.pk" 1600677335 14900 69255a8624bcbccdc11835eb6f605bb1 ""
   "/Users/Vince/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/public/cm/dpi600/cmr10.pk" 1599817271 10764 4fb6040d634d1f69b0b673014afd34d5 ""
@@ -70,10 +70,10 @@
   "/Users/Vince/Library/Application Support/MiKTeX/texmfs/install/tex/latex/refcount/refcount.sty" 1600695064 9878 9e94e8fa600d95f9c7731bb21dfb67a4 ""
   "/Users/Vince/Library/Application Support/MiKTeX/texmfs/install/tex/latex/rerunfilecheck/rerunfilecheck.sty" 1600695057 9715 b051d5b493d9fe5f4bc251462d039e5f ""
   "/Users/Vince/Library/Application Support/MiKTeX/texmfs/install/tex/latex/url/url.sty" 1600695040 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
-  "Geers_geo1001_hw01.aux" 1600695082 5734 8a638a51a7fc7b5a8e617bd98d550f85 "pdflatex"
-  "Geers_geo1001_hw01.bbl" 1600695076 167 76756eebaf92d71268b3396d226b8afb "bibtex Geers_geo1001_hw01"
-  "Geers_geo1001_hw01.out" 1600695082 796 791f0cb87d190ed47148c9109974872d "pdflatex"
-  "Geers_geo1001_hw01.tex" 1600694982 14602 089604abfa8d636f18c42a0fe1d22640 ""
+  "Geers_geo1001_hw01.aux" 1600695709 5734 8a638a51a7fc7b5a8e617bd98d550f85 "pdflatex"
+  "Geers_geo1001_hw01.bbl" 1600695703 167 76756eebaf92d71268b3396d226b8afb "bibtex Geers_geo1001_hw01"
+  "Geers_geo1001_hw01.out" 1600695709 796 791f0cb87d190ed47148c9109974872d "pdflatex"
+  "Geers_geo1001_hw01.tex" 1600695701 14609 03fc91aff773fd48085e7c9a4ef00f6b ""
   "images_latex/boxplot_temperature.png" 1600675456 105012 9d5b76a19eef67b71635cb9c68d3d781 ""
   "images_latex/boxplot_winddirection.png" 1600675435 91897 ddcdd0abd2843bfa91e5635e089da5fa ""
   "images_latex/boxplot_windspeed.png" 1600675417 119884 16dd03fbbda8831203fb50a552a37dbe ""
@@ -90,9 +90,9 @@
   "images_latex/pdf_windspeed.png" 1600681061 115381 6fed1efa46bd27a2e497c2f656c6bb6f ""
   "images_latex/pmf_temp.png" 1600679701 93854 51b657394e2f56320d3d93c56cb83b9c ""
   (generated)
-  "Geers_geo1001_hw01.pdf"
+  "/Users/Vince/Documents/Geo1001/geo1001_hw1/Geers_geo1001_hw01.pdf"
+  "Geers_geo1001_hw01.out"
   "/Users/Vince/Documents/Geo1001/geo1001_hw1/Geers_geo1001_hw01.log"
   "Geers_geo1001_hw01.log"
-  "Geers_geo1001_hw01.out"
   "Geers_geo1001_hw01.aux"
-  "/Users/Vince/Documents/Geo1001/geo1001_hw1/Geers_geo1001_hw01.pdf"
+  "Geers_geo1001_hw01.pdf"
