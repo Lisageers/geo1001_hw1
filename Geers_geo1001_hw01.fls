@@ -46,13 +46,86 @@ OUTPUT /Users/Vince/Documents/Geo1001/geo1001_hw1/Geers_geo1001_hw01.pdf
 INPUT /Users/Vince/Documents/Geo1001/geo1001_hw1/images_latex/histogram_5_bins.png
 INPUT /Users/Vince/Documents/Geo1001/geo1001_hw1/images_latex/histogram_5_bins.png
 INPUT /Users/Vince/Documents/Geo1001/geo1001_hw1/images_latex/histogram_5_bins.png
+INPUT /Users/Vince/Documents/Geo1001/geo1001_hw1/images_latex/histogram_50_bins.png
+INPUT /Users/Vince/Documents/Geo1001/geo1001_hw1/images_latex/histogram_50_bins.png
+INPUT /Users/Vince/Documents/Geo1001/geo1001_hw1/images_latex/histogram_50_bins.png
+INPUT /Users/Vince/Documents/Geo1001/geo1001_hw1/images_latex/histogram_50_bins.png
+INPUT /Users/Vince/Documents/Geo1001/geo1001_hw1/images_latex/histogram_50_bins.png
+INPUT /Users/Vince/Documents/Geo1001/geo1001_hw1/images_latex/frequency_polygons_temp.png
+INPUT /Users/Vince/Documents/Geo1001/geo1001_hw1/images_latex/frequency_polygons_temp.png
+INPUT /Users/Vince/Documents/Geo1001/geo1001_hw1/images_latex/frequency_polygons_temp.png
+INPUT /Users/Vince/Documents/Geo1001/geo1001_hw1/images_latex/frequency_polygons_temp.png
+INPUT /Users/Vince/Documents/Geo1001/geo1001_hw1/images_latex/frequency_polygons_temp.png
+INPUT /Users/Vince/Documents/Geo1001/geo1001_hw1/images_latex/boxplot_windspeed.png
+INPUT /Users/Vince/Documents/Geo1001/geo1001_hw1/images_latex/boxplot_windspeed.png
+INPUT /Users/Vince/Documents/Geo1001/geo1001_hw1/images_latex/boxplot_windspeed.png
+INPUT /Users/Vince/Documents/Geo1001/geo1001_hw1/images_latex/boxplot_windspeed.png
+INPUT /Users/Vince/Documents/Geo1001/geo1001_hw1/images_latex/boxplot_windspeed.png
+INPUT /Users/Vince/Documents/Geo1001/geo1001_hw1/images_latex/boxplot_winddirection.png
+INPUT /Users/Vince/Documents/Geo1001/geo1001_hw1/images_latex/boxplot_winddirection.png
+INPUT /Users/Vince/Documents/Geo1001/geo1001_hw1/images_latex/boxplot_winddirection.png
+INPUT /Users/Vince/Documents/Geo1001/geo1001_hw1/images_latex/boxplot_winddirection.png
+INPUT /Users/Vince/Documents/Geo1001/geo1001_hw1/images_latex/boxplot_winddirection.png
+INPUT /Users/Vince/Documents/Geo1001/geo1001_hw1/images_latex/boxplot_temperature.png
+INPUT /Users/Vince/Documents/Geo1001/geo1001_hw1/images_latex/boxplot_temperature.png
+INPUT /Users/Vince/Documents/Geo1001/geo1001_hw1/images_latex/boxplot_temperature.png
+INPUT /Users/Vince/Documents/Geo1001/geo1001_hw1/images_latex/boxplot_temperature.png
+INPUT /Users/Vince/Documents/Geo1001/geo1001_hw1/images_latex/boxplot_temperature.png
+INPUT /Users/Vince/Documents/Geo1001/geo1001_hw1/images_latex/pmf_temp.png
+INPUT /Users/Vince/Documents/Geo1001/geo1001_hw1/images_latex/pmf_temp.png
+INPUT /Users/Vince/Documents/Geo1001/geo1001_hw1/images_latex/pmf_temp.png
+INPUT /Users/Vince/Documents/Geo1001/geo1001_hw1/images_latex/pmf_temp.png
+INPUT /Users/Vince/Documents/Geo1001/geo1001_hw1/images_latex/pmf_temp.png
+INPUT /Users/Vince/Documents/Geo1001/geo1001_hw1/images_latex/pdf_temp.png
+INPUT /Users/Vince/Documents/Geo1001/geo1001_hw1/images_latex/pdf_temp.png
+INPUT /Users/Vince/Documents/Geo1001/geo1001_hw1/images_latex/pdf_temp.png
+INPUT /Users/Vince/Documents/Geo1001/geo1001_hw1/images_latex/pdf_temp.png
+INPUT /Users/Vince/Documents/Geo1001/geo1001_hw1/images_latex/pdf_temp.png
+INPUT /Users/Vince/Documents/Geo1001/geo1001_hw1/images_latex/cdf_temp.png
+INPUT /Users/Vince/Documents/Geo1001/geo1001_hw1/images_latex/cdf_temp.png
+INPUT /Users/Vince/Documents/Geo1001/geo1001_hw1/images_latex/cdf_temp.png
+INPUT /Users/Vince/Documents/Geo1001/geo1001_hw1/images_latex/cdf_temp.png
+INPUT /Users/Vince/Documents/Geo1001/geo1001_hw1/images_latex/cdf_temp.png
+INPUT /Users/Vince/Documents/Geo1001/geo1001_hw1/images_latex/pdf_windspeed.png
+INPUT /Users/Vince/Documents/Geo1001/geo1001_hw1/images_latex/pdf_windspeed.png
+INPUT /Users/Vince/Documents/Geo1001/geo1001_hw1/images_latex/pdf_windspeed.png
+INPUT /Users/Vince/Documents/Geo1001/geo1001_hw1/images_latex/pdf_windspeed.png
+INPUT /Users/Vince/Documents/Geo1001/geo1001_hw1/images_latex/pdf_windspeed.png
 INPUT /Users/Vince/Library/Application Support/MiKTeX/texmfs/data/pdftex/config/pdftex.map
-INPUT /Users/Vince/Documents/Geo1001/geo1001_hw1/images_latex/histogram_50_bins.png
-INPUT /Users/Vince/Documents/Geo1001/geo1001_hw1/images_latex/histogram_50_bins.png
-INPUT /Users/Vince/Documents/Geo1001/geo1001_hw1/images_latex/histogram_50_bins.png
-INPUT /Users/Vince/Documents/Geo1001/geo1001_hw1/images_latex/histogram_50_bins.png
-INPUT /Users/Vince/Documents/Geo1001/geo1001_hw1/images_latex/histogram_50_bins.png
+INPUT /Users/Vince/Documents/Geo1001/geo1001_hw1/images_latex/kde_windspeed.png
+INPUT /Users/Vince/Documents/Geo1001/geo1001_hw1/images_latex/kde_windspeed.png
+INPUT /Users/Vince/Documents/Geo1001/geo1001_hw1/images_latex/kde_windspeed.png
+INPUT /Users/Vince/Documents/Geo1001/geo1001_hw1/images_latex/kde_windspeed.png
+INPUT /Users/Vince/Documents/Geo1001/geo1001_hw1/images_latex/kde_windspeed.png
+INPUT /Users/Vince/Documents/Geo1001/geo1001_hw1/images_latex/cor_temp.png
+INPUT /Users/Vince/Documents/Geo1001/geo1001_hw1/images_latex/cor_temp.png
+INPUT /Users/Vince/Documents/Geo1001/geo1001_hw1/images_latex/cor_temp.png
+INPUT /Users/Vince/Documents/Geo1001/geo1001_hw1/images_latex/cor_temp.png
+INPUT /Users/Vince/Documents/Geo1001/geo1001_hw1/images_latex/cor_temp.png
+INPUT /Users/Vince/Documents/Geo1001/geo1001_hw1/images_latex/cor_wbgt.png
+INPUT /Users/Vince/Documents/Geo1001/geo1001_hw1/images_latex/cor_wbgt.png
+INPUT /Users/Vince/Documents/Geo1001/geo1001_hw1/images_latex/cor_wbgt.png
+INPUT /Users/Vince/Documents/Geo1001/geo1001_hw1/images_latex/cor_wbgt.png
+INPUT /Users/Vince/Documents/Geo1001/geo1001_hw1/images_latex/cor_wbgt.png
+INPUT /Users/Vince/Documents/Geo1001/geo1001_hw1/images_latex/cor_cwindspeed.png
+INPUT /Users/Vince/Documents/Geo1001/geo1001_hw1/images_latex/cor_cwindspeed.png
+INPUT /Users/Vince/Documents/Geo1001/geo1001_hw1/images_latex/cor_cwindspeed.png
+INPUT /Users/Vince/Documents/Geo1001/geo1001_hw1/images_latex/cor_cwindspeed.png
+INPUT /Users/Vince/Documents/Geo1001/geo1001_hw1/images_latex/cor_cwindspeed.png
+INPUT /Users/Vince/Documents/Geo1001/geo1001_hw1/images_latex/cdf_temp.png
+INPUT /Users/Vince/Documents/Geo1001/geo1001_hw1/images_latex/cdf_temp.png
+INPUT /Users/Vince/Documents/Geo1001/geo1001_hw1/images_latex/cdf_windspeed.png
+INPUT /Users/Vince/Documents/Geo1001/geo1001_hw1/images_latex/cdf_windspeed.png
+INPUT /Users/Vince/Documents/Geo1001/geo1001_hw1/images_latex/cdf_windspeed.png
+INPUT /Users/Vince/Documents/Geo1001/geo1001_hw1/images_latex/cdf_windspeed.png
+INPUT /Users/Vince/Documents/Geo1001/geo1001_hw1/images_latex/cdf_windspeed.png
 INPUT /Users/Vince/Documents/Geo1001/geo1001_hw1/Geers_geo1001_hw01.aux
+INPUT /Users/Vince/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/public/cm/dpi600/cmmi10.pk
+INPUT /Users/Vince/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/public/cm/dpi600/cmmi10.pk
+INPUT /Users/Vince/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/public/cm/dpi600/cmsy10.pk
+INPUT /Users/Vince/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/public/cm/dpi600/cmsy10.pk
+INPUT /Users/Vince/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/public/cm/dpi600/cmr5.pk
+INPUT /Users/Vince/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/public/cm/dpi600/cmr5.pk
 INPUT /Users/Vince/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/public/cm/dpi600/cmr10.pk
 INPUT /Users/Vince/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/public/cm/dpi600/cmr10.pk
 INPUT /Users/Vince/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/public/cm/dpi600/cmbx12.pk

@@ -16,6 +16,7 @@ def read_csv(datafile):
     # print(data)
     return data
 
+
 def mean_statistics_csv(a, b, c, d, e):
     data_dict = {}
 
@@ -55,6 +56,7 @@ def mean_statistics_csv(a, b, c, d, e):
     dataframe = pandas.DataFrame(data_dict)
     dataframe.to_csv('mean_statistics.csv')
 
+
 def mean_statistics(dataframe, sensor):
 
     mean = dataframe.mean()
@@ -62,10 +64,12 @@ def mean_statistics(dataframe, sensor):
     variance = dataframe.var()
     print(f"Mean of sensor {sensor}: \n{mean} \n\nVariance of sensor {sensor}: \n{variance}, \n\nStandard deviation of sensor {sensor} \n{std}\n")
 
+
 def histogram(dataframea, dataframeb, dataframec, dataframed, dataframee, bins, xlim, ylim):
-    fig = plt.figure()
     
+    fig = plt.figure()   
     fig.suptitle(f"Histograms of all sensors {bins} bins")
+
     ax1 = fig.add_subplot(231)
     ax1.set_ylabel('Frequency')
     ax1.set_xlabel('Temperature in C')
@@ -110,80 +114,92 @@ def histogram(dataframea, dataframeb, dataframec, dataframed, dataframee, bins, 
     plt.show()
 
 
-def frequency_polygons(dataframea, dataframeb, dataframec, dataframed, dataframee):
+def frequency_polygons(a, b, c, d, e):
 
     fig, ax = plt.subplots()
-    xa ,ya  = np.unique(dataframea['Temperature'], return_counts=True)
-    ax.plot(xa, ya)
-    xb ,yb  = np.unique(dataframeb['Temperature'], return_counts=True)
-    ax.plot(xb, yb)
-    xc, yc  = np.unique(dataframec['Temperature'], return_counts=True)
-    ax.plot(xc, yc)
-    xd ,yd  = np.unique(dataframed['Temperature'], return_counts=True)
-    ax.plot(xd, yd)
-    xe ,ye  = np.unique(dataframee['Temperature'], return_counts=True)
-    ax.plot(xe, ye)
+    [frequency,bins] = np.histogram(a, bins=50)
+    ax.plot(bins[:-1],frequency)
+
+    [frequency,bins] = np.histogram(b, bins=50)
+    ax.plot(bins[:-1],frequency)
+
+    [frequency,bins] = np.histogram(c, bins=50)
+    ax.plot(bins[:-1],frequency)
+
+    [frequency,bins] = np.histogram(d, bins=50)
+    ax.plot(bins[:-1],frequency)
+
+    [frequency,bins] = np.histogram(e, bins=50)
+    ax.plot(bins[:-1],frequency)
     
     ax.set(xlabel='Temperature in C', ylabel='Frequency',
-       title='Frequency Polygon')
+       title='Frequency Polygons', xlim=[0, 40], ylim=[0, 250])
     ax.legend(["Temperature sensor A", "Temperature sensor B", "Temperature sensor C", 
         "Temperature sensor D", "Temperature sensor E"])
     plt.show()
 
-def boxplots(dataframea, dataframeb, dataframec, dataframed, dataframee):
 
-    fig, ax = plt.subplots()
-    plt.subplot(2, 3, 1)
-    dataframea.boxplot(column='Temperature')
-    plt.subplot(2, 3, 2)
-    dataframeb.boxplot(column='Temperature')
-    plt.subplot(2, 3, 3)
-    dataframec.boxplot(column='Temperature')
-    plt.subplot(2, 3, 4)
-    dataframed.boxplot(column='Temperature')
-    plt.subplot(2, 3, 5)
-    dataframee.boxplot(column='Temperature')
-    plt.show()
+def boxplots(a, b, c, d, e, variable):
 
-    plt.subplot(2, 3, 1)
-    dataframea.boxplot(column='Wind Speed')
-    plt.subplot(2, 3, 2)
-    dataframeb.boxplot(column='Wind Speed')
-    plt.subplot(2, 3, 3)
-    dataframec.boxplot(column='Wind Speed')
-    plt.subplot(2, 3, 4)
-    dataframed.boxplot(column='Wind Speed')
-    plt.subplot(2, 3, 5)
-    dataframee.boxplot(column='Wind Speed')
-    plt.show()
+    fig = plt.figure()
+    fig.suptitle(f"Boxplots of all sensors {variable}")
 
-    plt.subplot(2, 3, 1)
-    dataframea.boxplot(column='Direction ‚ True')
-    plt.subplot(2, 3, 2)
-    dataframeb.boxplot(column='Direction ‚ True')
-    plt.subplot(2, 3, 3)
-    dataframec.boxplot(column='Direction ‚ True')
-    plt.subplot(2, 3, 4)
-    dataframed.boxplot(column='Direction ‚ True')
-    plt.subplot(2, 3, 5)
-    dataframee.boxplot(column='Direction ‚ True')
+    ax1 = fig.add_subplot(231)
+    ax1.set_title('Sensor A')
+    ax1.set_ylabel(f'{variable}')
+    a.plot.box()
+    plt.xticks([])
+    
+    ax2 = fig.add_subplot(232)
+    ax2.set_title('Sensor B')
+    ax2.set_ylabel(f'{variable}')
+    b.plot.box()
+    plt.xticks([])
+
+    
+    ax3 = fig.add_subplot(233)
+    ax3.set_title('Sensor C')
+    ax3.set_ylabel(f'{variable}')
+    c.plot.box()
+    plt.xticks([])
+    
+    ax4 = fig.add_subplot(234)
+    ax4.set_title('Sensor D')
+    ax4.set_ylabel(f'{variable}')
+    d.plot.box()
+    plt.xticks([])
+    
+    ax5 = fig.add_subplot(235)
+    ax5.set_title('Sensor E')
+    ax5.set_ylabel(f'{variable}')
+    e.plot.box()
+    plt.xticks([])
+    
+    fig.tight_layout()
     plt.show()
 
 
 def pmf(dataframea, dataframeb, dataframec, dataframed, dataframee):
 
     fig = plt.figure()
+    fig.suptitle('Probability Mass Functions of Temperature')
 
     p = dataframea['Temperature'].value_counts()/len(dataframea['Temperature'])
     sortedp = p.sort_index()
     ax1 = fig.add_subplot(231)
     ax1.bar(sortedp.index,sortedp)
+    ax1.set_ylabel("Probability")
+    ax1.set_xlabel("Temperature in C")
+    ax1.set_title('Sensor A')
     plt.xlim(0, 40)
 
     p = dataframeb['Temperature'].value_counts()/len(dataframeb['Temperature'])
     sortedp = p.sort_index()
     ax2 = fig.add_subplot(232)
     ax2.bar(sortedp.index,sortedp)
+    ax2.set_ylabel("Probability")
+    ax2.set_xlabel("Temperature in C")
+    ax2.set_title('Sensor B')
     plt.xlim(0, 40)
     plt.ylim(0, 0.025)
 
@@ -191,6 +207,9 @@ def pmf(dataframea, dataframeb, dataframec, dataframed, dataframee):
     sortedp = p.sort_index()
     ax3 = fig.add_subplot(233)
     ax3.bar(sortedp.index,sortedp)
+    ax3.set_ylabel("Probability")
+    ax3.set_xlabel("Temperature in C")
+    ax3.set_title('Sensor C')
     plt.xlim(0, 40)
     plt.ylim(0, 0.025)
 
@@ -198,6 +217,9 @@ def pmf(dataframea, dataframeb, dataframec, dataframed, dataframee):
     sortedp = p.sort_index()
     ax4 = fig.add_subplot(234)
     ax4.bar(sortedp.index,sortedp)
+    ax4.set_ylabel("Probability")
+    ax4.set_xlabel("Temperature in C")
+    ax4.set_title('Sensor D')
     plt.xlim(0, 40)
     plt.ylim(0, 0.025)
 
@@ -205,102 +227,158 @@ def pmf(dataframea, dataframeb, dataframec, dataframed, dataframee):
     sortedp = p.sort_index()
     ax5 = fig.add_subplot(235)
     ax5.bar(sortedp.index,sortedp)
+    ax5.set_ylabel("Probability")
+    ax5.set_xlabel("Temperature in C")
+    ax5.set_title('Sensor E')
     plt.xlim(0, 40)
     plt.ylim(0, 0.025)
     
+    fig.tight_layout()
     plt.show()
 
 
-def pdf(a, b, c, d, e):
+def pdf(a, b, c, d, e, variable, xlim, ylim):
 
     fig = plt.figure()
-    # fig.set_title('PDF Temperature sensors')
+    fig.suptitle(f'Probability Density Functions of {variable}')
     ax1 = fig.add_subplot(231)
     ax1.hist(x=a.astype(float), density=True, bins= 50,alpha=0.7, rwidth=0.85)
-    ax1.set_title('Sensor 1')
-    # plt.ylim(0, 0.20)
+    ax1.set_ylabel("Probability density")
+    ax1.set_xlabel(f"{variable}")
+    ax1.set_title('Sensor A')
+    ax1.set_xlim(xlim)
+    ax1.set_ylim(ylim)
 
     ax2 = fig.add_subplot(232)
     ax2.hist(x=b.astype(float), density=True, bins= 50,alpha=0.7, rwidth=0.85)
-    # plt.ylim(0, 0.20)
-    ax2.set_title('Sensor 2')
+    ax2.set_title('Sensor B')
+    ax2.set_ylabel("Probability density")
+    ax2.set_xlabel(f"{variable}")
+    ax2.set_xlim(xlim)
+    ax2.set_ylim(ylim)
 
     ax3 = fig.add_subplot(233)
     ax3.hist(x=c.astype(float), density=True, bins= 50,alpha=0.7, rwidth=0.85)
-    # plt.ylim(0, 0.20)
-    ax3.set_title('Sensor 3')
+    ax3.set_title('Sensor C')
+    ax3.set_ylabel("Probability density")
+    ax3.set_xlabel(f"{variable}")
+    ax3.set_xlim(xlim)
+    ax3.set_ylim(ylim)
 
     ax4 = fig.add_subplot(234)
     ax4.hist(x=a.astype(float), density=True, bins= 50,alpha=0.7, rwidth=0.85)
-    # plt.ylim(0, 0.20)
-    ax4.set_title('Sensor 4')
+    ax4.set_title('Sensor D')
+    ax4.set_ylabel("Probability density")
+    ax4.set_xlabel(f"{variable}")
+    ax4.set_xlim(xlim)
+    ax4.set_ylim(ylim)
 
     ax5 = fig.add_subplot(235)
     ax5.hist(x=a.astype(float), density=True, bins= 50,alpha=0.7, rwidth=0.85)
-    # plt.ylim(0, 0.20)
-    ax5.set_title('Sensor 5')
+    ax5.set_title('Sensor E')
+    ax5.set_ylabel("Probability density")
+    ax5.set_xlabel(f"{variable}")
+    ax5.set_xlim(xlim)
+    ax5.set_ylim(ylim)
 
+    fig.tight_layout()
     plt.show()
 
 
-def cdf(a, b, c, d, e):
+def cdf(a, b, c, d, e, variable, xlim):
 
     fig = plt.figure()
+    fig.suptitle(f"Cumulative Density Functions of {variable}")
+
     ax1 = fig.add_subplot(231)
     ax1.hist(x=a.astype(float), cumulative=True, density=True, bins= 50,alpha=0.7, rwidth=0.85)
-    ax1.set_title('Sensor 1')
-    plt.ylim(0, 1)
+    ax1.set_title('Sensor A')
+    ax1.set_ylabel("Cumulative probability")
+    ax1.set_xlabel(f"{variable}")
+    ax1.set_ylim(0, 1)
+    ax1.set_xlim(xlim)
 
     ax2 = fig.add_subplot(232)
     ax2.hist(x=b.astype(float), cumulative=True, density=True, bins= 50,alpha=0.7, rwidth=0.85)
-    plt.ylim(0, 1)
-    ax2.set_title('Sensor 2')
+    ax2.set_ylim(0, 1)
+    ax2.set_xlim(xlim)
+    ax2.set_ylabel("Cumulative probability")
+    ax2.set_xlabel(f"{variable}")
+    ax2.set_title('Sensor B')
 
     ax3 = fig.add_subplot(233)
     ax3.hist(x=c.astype(float), cumulative=True, density=True, bins= 50,alpha=0.7, rwidth=0.85)
-    plt.ylim(0, 1)
-    ax3.set_title('Sensor 3')
+    ax3.set_ylim(0, 1)
+    ax3.set_xlim(xlim)
+    ax3.set_ylabel("Cumulative probability")
+    ax3.set_xlabel(f"{variable}")
+    ax3.set_title('Sensor C')
 
     ax4 = fig.add_subplot(234)
     ax4.hist(x=a.astype(float), cumulative=True, density=True, bins= 50,alpha=0.7, rwidth=0.85)
-    plt.ylim(0, 1)
-    ax4.set_title('Sensor 4')
+    ax4.set_ylim(0, 1)
+    ax4.set_xlim(xlim)
+    ax4.set_ylabel("Cumulative probability")
+    ax4.set_xlabel(f"{variable}")
+    ax4.set_title('Sensor D')
 
     ax5 = fig.add_subplot(235)
     ax5.hist(x=a.astype(float), cumulative=True, density=True, bins= 50,alpha=0.7, rwidth=0.85)
-    plt.ylim(0, 1)
-    ax5.set_title('Sensor 5')
+    ax5.set_ylim(0, 1)
+    ax5.set_xlim(xlim)
+    ax5.set_ylabel("Cumulative probability")
+    ax5.set_xlabel(f"{variable}")
+    ax5.set_title('Sensor E')
 
+    fig.tight_layout()
     plt.show()
 
+
 def kernel_dens(a, b, c, d, e):
-    fig = plt.figure(figsize=(17,6))
+    fig = plt.figure()
+    fig.suptitle(f"Kernel density estimation plots of Wind Speed")
     
     ax1 = fig.add_subplot(231)
-    sns.distplot(a.astype(float),ax=ax1, kde=True)
+    sns.distplot(a.astype(float),ax=ax1, kde=True, hist=False)
     ax1.set_title('Sensor A')
-    ax1.set_xlabel('')
+    ax1.set_xlabel('Wind Speed')
+    ax1.set_ylabel("Density")
+    ax1.set_xlim([-1, 10])
+    ax1.set_ylim([0, 1.5])
 
     ax2 = fig.add_subplot(232)
-    sns.distplot(b.astype(float),ax=ax2, kde=True)
+    sns.distplot(b.astype(float),ax=ax2, kde=True, hist=False)
     ax2.set_title('Sensor B')
-    ax2.set_xlabel('')
+    ax2.set_xlabel('Wind Speed')
+    ax2.set_ylabel("Density")
+    ax2.set_xlim([-1, 10])
+    ax2.set_ylim([0, 1.5])
 
     ax3 = fig.add_subplot(233)
-    sns.distplot(c.astype(float),ax=ax3, kde=True)
+    sns.distplot(c.astype(float),ax=ax3, kde=True, hist=False)
     ax3.set_title('Sensor C')
-    ax3.set_xlabel('')
+    ax3.set_xlabel('Wind Speed')
+    ax3.set_ylabel("Density")
+    ax3.set_xlim([-1, 10])
+    ax3.set_ylim([0, 1.5])
 
     ax4 = fig.add_subplot(234)
-    sns.distplot(d.astype(float),ax=ax4, kde=True)
+    sns.distplot(d.astype(float),ax=ax4, kde=True, hist=False)
     ax4.set_title('Sensor D')
-    ax4.set_xlabel('')
+    ax4.set_xlabel('Wind Speed')
+    ax4.set_ylabel("Density")
+    ax4.set_xlim([-1, 10])
+    ax4.set_ylim([0, 1.5])
 
     ax5 = fig.add_subplot(235)
-    sns.distplot(e.astype(float),ax=ax5, kde=True)
+    sns.distplot(e.astype(float),ax=ax5, kde=True, hist=False)
     ax5.set_title('Sensor E')
-    ax5.set_xlabel('')
+    ax5.set_xlabel('Wind Speed')
+    ax5.set_ylabel("Density")
+    ax5.set_xlim([-1, 10])
+    ax5.set_ylim([0, 1.5])
 
+    fig.tight_layout()
     plt.show()
 
 
@@ -396,6 +474,7 @@ def hypothesis_test(a, b, c, d, e, variable):
     t, p = ss.ttest_ind(b, a)
     print(f"p-value A, B of {variable}:  {p}")
 
+
 if __name__ == '__main__':
     data_a = read_csv('data_hw01/HEAT-A_final.csv')
     data_b = read_csv('data_hw01/HEAT-B_final.csv')
@@ -403,7 +482,7 @@ if __name__ == '__main__':
     data_d = read_csv('data_hw01/HEAT-D_final.csv')
     data_e = read_csv('data_hw01/HEAT-E_final.csv')
 
-    # # # a1
+    # a1
     # mean_statistics(data_a, "A")
     # mean_statistics(data_b, "B")
     # mean_statistics(data_c, "C")
@@ -412,24 +491,32 @@ if __name__ == '__main__':
 
     # mean_statistics_csv(data_a, data_b, data_c, data_d, data_e)
 
-    histogram(data_a, data_b, data_c, data_d, data_e, 5, [0, 40], [0, 1400])
-    histogram(data_a, data_b, data_c, data_d, data_e, 50, [0, 40], [0, 250])
+    # histogram(data_a, data_b, data_c, data_d, data_e, 5, [0, 40], [0, 1400])
+    # histogram(data_a, data_b, data_c, data_d, data_e, 50, [0, 40], [0, 250])
 
-    # frequency_polygons(data_a, data_b, data_c, data_d, data_e)
+    # frequency_polygons(data_a['Temperature'], data_b['Temperature'], data_c['Temperature'],
+    #     data_d['Temperature'], data_e['Temperature'])
 
-    # boxplots(data_a, data_b, data_c, data_d, data_e)
+    # boxplots(data_a['Wind Speed'], data_b['Wind Speed'], data_c['Wind Speed'],
+    #     data_d['Wind Speed'], data_e['Wind Speed'], 'Wind Speed in m/s')
 
-    # # a2
+    # boxplots(data_a['Direction ‚ True'], data_b['Direction ‚ True'], data_c['Direction ‚ True'],
+    #     data_d['Direction ‚ True'], data_e['Direction ‚ True'], 'Wind Direction in m/s')
+    
+    # boxplots(data_a['Temperature'], data_b['Temperature'], data_c['Temperature'],
+    #     data_d['Temperature'], data_e['Temperature'], 'Temperature in C')
+
+    # a2
     # pmf(data_a, data_b, data_c, data_d, data_e)
 
     # pdf(data_a['Temperature'], data_b['Temperature'], data_c['Temperature'],
-    #     data_d['Temperature'], data_e['Temperature'])
+    #     data_d['Temperature'], data_e['Temperature'], 'Temperature in C', [0, 40], [0, 0.2])
 
     # cdf(data_a['Temperature'], data_b['Temperature'], data_c['Temperature'],
-    #     data_d['Temperature'], data_e['Temperature'])
+    #     data_d['Temperature'], data_e['Temperature'], 'Temperature in C', [0, 35])
 
     # pdf(data_a['Wind Speed'], data_b['Wind Speed'], data_c['Wind Speed'],
-    #     data_d['Wind Speed'], data_e['Wind Speed'])
+    #     data_d['Wind Speed'], data_e['Wind Speed'], 'Wind Speed in m/s', [0, 10], [0, 2])
 
     # kernel_dens(data_a['Wind Speed'], data_b['Wind Speed'], data_c['Wind Speed'],
     #     data_d['Wind Speed'], data_e['Wind Speed'])
@@ -447,10 +534,10 @@ if __name__ == '__main__':
 
     # # a4
     # cdf(data_a['Temperature'], data_b['Temperature'], data_c['Temperature'],
-    #     data_d['Temperature'], data_e['Temperature'])
+    #     data_d['Temperature'], data_e['Temperature'], 'Temperature in C', [0, 35])
 
     # cdf(data_a['Wind Speed'], data_b['Wind Speed'], data_c['Wind Speed'],
-    #     data_d['Wind Speed'], data_e['Wind Speed'])
+    #     data_d['Wind Speed'], data_e['Wind Speed'], 'Wind Speed in m/s', [0, 9])
 
     # confidence_interval(data_a['Temperature'], data_b['Temperature'], data_c['Temperature'],
     #     data_d['Temperature'], data_e['Temperature'], "Temperature")

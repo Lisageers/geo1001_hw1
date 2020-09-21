@@ -52,18 +52,143 @@
 
 
     \subsection{Histograms}
-        \includegraphics[width=\textwidth]{histogram_5_bins}
+        \begin{figure}
+            \includegraphics[width=\textwidth]{histogram_5_bins}
+            \caption{Histograms of all sensors with 5 bins}
+        \end{figure}
 
-        \includegraphics[width=\textwidth]{histogram_50_bins}
+        \begin{figure}
+            \includegraphics[width=\textwidth]{histogram_50_bins}
+            \caption{Histograms of all sensors with 50 bins}
+        \end{figure}
+        
+        In figures 1 and 2, the histograms of the temperature of the five sensors are displayed.
+        As can be seen, there is a significant difference between the figures due to the bin sizes.
+        Figure 2 with binsize 50 is much more detailed, which makes this figure more useful for analysation.
+        The binsize calculated with Rice's rule is approximately in the middle between 5 and 50. 
+        Rice's rule \ 2 * $\sqrt[3]{N}$ \ with \ N = 2474 \ gives 27 as a number of bins. 
 
+
+
+    \subsection{Frequency polygons}
+        \begin{figure}
+            \includegraphics[width=\textwidth]{frequency_polygons_temp}
+            \caption{Frequency polygon of all sensors for the variable Temperature}
+        \end{figure}
+            
+
+    \subsection{Boxplots}
+        
+        \begin{figure}
+            \includegraphics[width=\textwidth]{boxplot_windspeed}
+            \caption{Boxplots of all sensors for the variable Wind Speed}
+        \end{figure}
+        
+        \begin{figure}
+            \includegraphics[width=\textwidth]{boxplot_winddirection}
+            \caption{Boxplots of all sensors for the variable Wind Direction}
+        \end{figure}
+        
+        \begin{figure}
+            \includegraphics[width=\textwidth]{boxplot_temperature}
+            \caption{Boxplots of all sensors for the variable Temperature}
+        \end{figure}
+        
 
 \section{A2}
+        \subsection{Functions Temperature}
+            \begin{figure}
+                \includegraphics[width=\textwidth]{pmf_temp}
+                \caption{Probability Mass Functions of Temperature for all sensors}
+            \end{figure}
 
-Some other text here.
+            \begin{figure}
+                \includegraphics[width=\textwidth]{pdf_temp}
+                \caption{Probability Density Functions of Temperature for all sensors}
+            \end{figure}
+
+            \begin{figure}
+                \includegraphics[width=\textwidth]{cdf_temp}
+                \caption{Cumilative Density Functions of Temperature for all sensors}
+            \end{figure}
+
+        \subsection{Functions Wind Speed}
+            \begin{figure}
+                \includegraphics[width=\textwidth]{pdf_windspeed}
+                \caption{Probability Density Functions of Wind Speed for all sensors}
+            \end{figure}
+
+            \begin{figure}
+                \includegraphics[width=\textwidth]{kde_windspeed}
+                \caption{Kernel Density Estimation of Wind Speed for all sensors}
+            \end{figure}
+
+
 
 \section{A3}
+    \begin{figure}
+        \includegraphics[width=\textwidth]{cor_temp}
+        \caption{Spearman and Pearson correlation plot for all sensor combinations of Temperature}
+    \end{figure}
+
+    \begin{figure}
+        \includegraphics[width=\textwidth]{cor_wbgt}
+        \caption{Spearman and Pearson correlation plot for all sensor combinations of Wet Bulb Globe Temperature}
+    \end{figure}
+
+    \begin{figure}
+        \includegraphics[width=\textwidth]{cor_cwindspeed}
+        \caption{Spearman and Pearson correlation plot for all sensor combinations of Crosswind Speed}
+    \end{figure}
 
 \section{A4}
+    \subsection{Cumulative Density Functions}
+        \begin{figure}
+            \includegraphics[width=\textwidth]{cdf_temp}
+            \caption{Cumilative Density Functions of Temperature for all sensors}
+        \end{figure}
+
+        \begin{figure}
+            \includegraphics[width=\textwidth]{cdf_windspeed}
+            \caption{Cumilative Density Functions of Wind Speed for all sensors}
+        \end{figure}
+
+    \subsection{Confidence Intervals}
+        \begin{table}[]
+            \caption {Confidence intervals of Temperature for all sensors}
+            \begin{tabular}{ll}
+            & Temperature                              \\ \hline
+            A & (17.81214113267346, 18.126065652463858)  \\
+            B & (17.90472689963894, 18.226129320070267)  \\
+            C & (17.754926235060246, 18.071347006653575) \\
+            D & (17.83814660824381, 18.15457772482005)   \\
+            E & (18.181933946027776, 18.525944841851015)
+            \end{tabular}
+            \end{table}
+
+        \begin{table}[]
+            \caption {Confidence intervals of Wind Speed for all sensors}
+            \begin{tabular}{ll}
+            & Wind Speed                               \\ \hline
+            A & (1.246227038990971, 1.3343868543854427)  \\
+            B & (1.1971663346979249, 1.287082453670411)  \\
+            C & (1.3243037885948932, 1.418622646328308)  \\
+            D & (1.5296480419653757, 1.633650260379006)  \\
+            E & (0.5680599051948441, 0.6244249432900044)
+            \end{tabular}
+            \end{table}
+
+    \subsection{Hypothesis Test}
+        \begin{table}[]
+            \caption {Confidence intervals of Wind Speed for all sensors}
+            \begin{tabular}{lll}
+                        & Temperature             & Wind Speed  \\ \hline
+            p-value E, D & 0.0027270117155346967 & 4.899592405994867e-212  \\ 
+            p-value C, D & 0.4657972008220813 & 4.610149126224334e-09  \\
+            p-value B, C & 0.18562772895626528 & 9.40075204600199e-05  \\
+            p-value A, B & 0.40185871871215073 & 0.13247973112544695 
+            \end{tabular}
+        \end{table}
 
 
 
