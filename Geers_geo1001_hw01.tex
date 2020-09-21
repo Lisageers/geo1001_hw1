@@ -1,5 +1,7 @@
 \documentclass{article}
 \usepackage{graphicx}
+\usepackage{float}
+\usepackage{hyperref}
 \graphicspath{ {images_latex/} }
 
 \title{Assignment 1 Geo1001}
@@ -8,6 +10,12 @@
 \begin{document}
 
 \maketitle
+
+\section{Introduction}
+    This assignment was made for the class Geo1001. A statistical analysis was done 
+    using a heat stress measurement dataset with five sensors \cite{data} . Analysing was
+    done in visual studio code using Python 3.7.5. Plotting was done with the use of Matplotlib.
+    Sourcecode of this assignment can be found on GitHub: \url{https://github.com/Lisageers/geo1001_hw1}
 
 \section{A1}
 
@@ -21,7 +29,7 @@
         sensors
 
 
-        \begin{table}[h]
+        \begin{table}[H]
             \caption {Mean Statistics of all sensors}
             \resizebox{\columnwidth}{!}{%
             \begin{tabular}{llllllllllllllll}
@@ -52,12 +60,12 @@
 
 
     \subsection{Histograms}
-        \begin{figure}
+        \begin{figure}[H]
             \includegraphics[width=\textwidth]{histogram_5_bins}
             \caption{Histograms of all sensors with 5 bins}
         \end{figure}
 
-        \begin{figure}
+        \begin{figure}[H]
             \includegraphics[width=\textwidth]{histogram_50_bins}
             \caption{Histograms of all sensors with 50 bins}
         \end{figure}
@@ -71,7 +79,7 @@
 
 
     \subsection{Frequency polygons}
-        \begin{figure}
+        \begin{figure}[H]
             \includegraphics[width=\textwidth]{frequency_polygons_temp}
             \caption{Frequency polygon of all sensors for the variable Temperature}
         \end{figure}
@@ -79,17 +87,17 @@
 
     \subsection{Boxplots}
         
-        \begin{figure}
+        \begin{figure}[H]
             \includegraphics[width=\textwidth]{boxplot_windspeed}
             \caption{Boxplots of all sensors for the variable Wind Speed}
         \end{figure}
         
-        \begin{figure}
+        \begin{figure}[H]
             \includegraphics[width=\textwidth]{boxplot_winddirection}
             \caption{Boxplots of all sensors for the variable Wind Direction}
         \end{figure}
         
-        \begin{figure}
+        \begin{figure}[H]
             \includegraphics[width=\textwidth]{boxplot_temperature}
             \caption{Boxplots of all sensors for the variable Temperature}
         \end{figure}
@@ -97,28 +105,28 @@
 
 \section{A2}
         \subsection{Functions Temperature}
-            \begin{figure}
+            \begin{figure}[H]
                 \includegraphics[width=\textwidth]{pmf_temp}
                 \caption{Probability Mass Functions of Temperature for all sensors}
             \end{figure}
 
-            \begin{figure}
+            \begin{figure}[H]
                 \includegraphics[width=\textwidth]{pdf_temp}
                 \caption{Probability Density Functions of Temperature for all sensors}
             \end{figure}
 
-            \begin{figure}
+            \begin{figure}[H]
                 \includegraphics[width=\textwidth]{cdf_temp}
                 \caption{Cumilative Density Functions of Temperature for all sensors}
             \end{figure}
 
         \subsection{Functions Wind Speed}
-            \begin{figure}
+            \begin{figure}[H]
                 \includegraphics[width=\textwidth]{pdf_windspeed}
                 \caption{Probability Density Functions of Wind Speed for all sensors}
             \end{figure}
 
-            \begin{figure}
+            \begin{figure}[H]
                 \includegraphics[width=\textwidth]{kde_windspeed}
                 \caption{Kernel Density Estimation of Wind Speed for all sensors}
             \end{figure}
@@ -126,35 +134,35 @@
 
 
 \section{A3}
-    \begin{figure}
+    \begin{figure}[H]
         \includegraphics[width=\textwidth]{cor_temp}
         \caption{Spearman and Pearson correlation plot for all sensor combinations of Temperature}
     \end{figure}
 
-    \begin{figure}
+    \begin{figure}[H]
         \includegraphics[width=\textwidth]{cor_wbgt}
         \caption{Spearman and Pearson correlation plot for all sensor combinations of Wet Bulb Globe Temperature}
     \end{figure}
 
-    \begin{figure}
+    \begin{figure}[H]
         \includegraphics[width=\textwidth]{cor_cwindspeed}
         \caption{Spearman and Pearson correlation plot for all sensor combinations of Crosswind Speed}
     \end{figure}
 
 \section{A4}
     \subsection{Cumulative Density Functions}
-        \begin{figure}
+        \begin{figure}[H]
             \includegraphics[width=\textwidth]{cdf_temp}
             \caption{Cumilative Density Functions of Temperature for all sensors}
         \end{figure}
 
-        \begin{figure}
+        \begin{figure}[H]
             \includegraphics[width=\textwidth]{cdf_windspeed}
             \caption{Cumilative Density Functions of Wind Speed for all sensors}
         \end{figure}
 
     \subsection{Confidence Intervals}
-        \begin{table}[]
+        \begin{table}[H]
             \caption {Confidence intervals of Temperature for all sensors}
             \begin{tabular}{ll}
             & Temperature                              \\ \hline
@@ -166,7 +174,7 @@
             \end{tabular}
             \end{table}
 
-        \begin{table}[]
+        \begin{table}[H]
             \caption {Confidence intervals of Wind Speed for all sensors}
             \begin{tabular}{ll}
             & Wind Speed                               \\ \hline
@@ -179,7 +187,7 @@
             \end{table}
 
     \subsection{Hypothesis Test}
-        \begin{table}[]
+        \begin{table}[H]
             \caption {Confidence intervals of Wind Speed for all sensors}
             \begin{tabular}{lll}
                         & Temperature             & Wind Speed  \\ \hline
@@ -190,6 +198,7 @@
             \end{tabular}
         \end{table}
 
-
+    \bibliographystyle{plain}
+    \bibliography{references.bib}   
 
 \end{document}

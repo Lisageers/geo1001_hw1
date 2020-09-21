@@ -1,6 +1,6 @@
 #-- GEO1001.2020--hw01
 #-- Lisa Geers 
-#-- [YOUR STUDENT NUMBER]
+#-- 5351421
 
 import pandas
 import matplotlib.pyplot as plt
